@@ -1,0 +1,85 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+.white{
+color: white;
+  }
+
+  #logo {
+ 	font-size: 36px;
+ 	font-weight: 700;
+   color:#cc3300;
+ 	//text-transform: uppercase;
+ 	letter-spacing: -1px;
+ 	padding: 15px 0;
+   a:hover {
+       color: #000066;
+   }
+ }
+ html,body{
+    padding: 0;
+    margin:0;
+    width: 100%;
+    height:100%;
+    background:#0A0A0A;
+  }
+
+ .parallax{
+    background-image:url("https://static1.squarespace.com/static/57d6b5dd2994cab476e95790/57d95d67b8a79bf906f67b41/57d9657df5e231a184e8140a/1473865090916/Stocksy_txp0f79248d7x2100_Large_461838.jpg?format=2500w");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:inherit;
+    opacity:0.9;
+    max-width: 100%;
+
+    position:relative;
+
+
+ }
+
+ #main_content {
+ 	#content {
+ 		float: none;
+ 	}
+ 	padding-bottom: 100px;
+ 	.link {
+ 		padding: 2em 1em;
+ 		border-bottom: 1px solid #e9e9e9;
+ 		.title {
+
+ 			a {
+ 				color: #FF4500;
+ 			}
+ 		}
+ 	}
+ 	.comments_title {
+ 		margin-top: 2em;
+ 	}
+ 	#comments {
+ 		.comment {
+ 			padding: 1em 0;
+ 			border-top: 1px solid #E9E9E9;
+ 			.lead {
+ 				margin-bottom: 0;
+ 			}
+ 		}
+ 	}
+ }

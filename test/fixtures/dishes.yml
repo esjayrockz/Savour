@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dish: MyString
+  restaurant: MyString
+  rating: 1.5
+  city: MyString
+  cuisine: MyString
+  category: MyString
+
+two:
+  dish: MyString
+  restaurant: MyString
+  rating: 1.5
+  city: MyString
+  cuisine: MyString
+  category: MyString

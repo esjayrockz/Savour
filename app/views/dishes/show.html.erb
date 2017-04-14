@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1><%= @dish.dish %><br> <small>Submitted by <%= @dish.user.email %></small></h1>
+</div>
+<h2><small>Restaurant: <%= @dish.restaurant %></small></h2>
+<h2><small>Rating: <%= @dish.rating %></small></h2>
+
+<% if @dish.user == current_user %>
+<div class="btn-group">
+<%= link_to "Edit Dish", edit_dish_path(@dish), class: "btn btn-primary" =%>&nbsp;
+<%= link_to "Delete Dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-default" =%>
+</div>
+<% end %>

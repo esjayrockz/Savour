@@ -1,0 +1,45 @@
+<%= form_for @dish do |f|%>
+<% if @dish.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+    <ul>
+    <% @dish.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+  <div class="form-group clearfix">
+  <div class="col-xs-7 ">
+  <%= f.label :dish %><br>
+  <%= f.text_field :dish, class: "form-control ",required: true %><br>
+  </div>
+  <div class="col-xs-7 ">
+  <%= f.label :restaurant %><br>
+  <%= f.text_field :restaurant, class: "form-control ",required: true %><br>
+  </div>
+  <div class="col-xs-7 ">
+  <%= f.label :rating, 'Rate the dish'%><br>
+  <%= f.select :rating, options_for_select([
+    ["Choose a rating", ""],
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"]),
+    {}, { class: "form form-group form-control",required: true } %><br>
+  </div>
+  </div>
+  <br>
+  <div class="form-group col-xs-4 ">
+    <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+  </div>
+
+
+<% end %>

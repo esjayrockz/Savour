@@ -1,9 +1,10 @@
 <div class="page-header">
   <h1><%= @dish.dish %><br></h1>
 </div>
+<%= image_tag @dish.image.url(:medium) %></br>
 <h2><small>Restaurant: <%= @dish.user.name %></small></h2>
 <h2><small>Cuisine: <%= @dish.cuisine %></small></h2>
-<h2><small>This dish is <%= @dish.category %></small></h2>
+<h2><small>Dish tags #<%= @dish.category %></small></h2>
 
 <% if @dish.user == current_user %>
 <div class="btn-group">

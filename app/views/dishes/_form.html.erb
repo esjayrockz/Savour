@@ -16,25 +16,37 @@
   <%= f.text_field :dish, class: "form-control ",required: true %><br>
   </div>
   <div class="col-xs-7 ">
-  <%= f.label :restaurant %><br>
-  <%= f.text_field :restaurant, class: "form-control ",required: true %><br>
-  </div>
+  <%= f.label :rating, 'Choose a cuisine'%>
+  <%= f.select :cuisine, options_for_select([
+   "American",
+   "Bakery",
+   "Bengali",
+   "Biryani",
+   "Cafe",
+   "Chettinad",
+   "Chinese",
+   "Coffee and Tea",
+   "Continental",
+   "Desserts",
+   "European",
+   "French",
+   "Hyderabadi",
+   "Indian",
+   "Italian",
+   "Japanese",
+   "Kebab",
+   "Mexican",
+   "Mughlai",
+   "Salad"]),
+   {}, { class: "form form-group form-control",required: true } %>
+
+ </div>
+
   <div class="col-xs-7 ">
-  <%= f.label :rating, 'Rate the dish'%><br>
-  <%= f.select :rating, options_for_select([
-    ["Choose a rating", ""],
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10"]),
-    {}, { class: "form form-group form-control",required: true } %><br>
+  <%= f.label :category, 'Describe the dish in one word' %><br>
+  <%= f.text_field :category, class: "form-control ",required: true %><br>
   </div>
+
   </div>
   <br>
   <div class="form-group col-xs-4 ">

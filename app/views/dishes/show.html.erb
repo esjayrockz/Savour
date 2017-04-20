@@ -1,8 +1,9 @@
 <div class="page-header">
-  <h1><%= @dish.dish %><br> <small>Submitted by <%= @dish.user.email %></small></h1>
+  <h1><%= @dish.dish %><br></h1>
 </div>
-<h2><small>Restaurant: <%= @dish.user.email %></small></h2>
-<h2><small>Rating: <%= @dish.rating %></small></h2>
+<h2><small>Restaurant: <%= @dish.user.name %></small></h2>
+<h2><small>Cuisine: <%= @dish.cuisine %></small></h2>
+<h2><small>This dish is <%= @dish.category %></small></h2>
 
 <% if @dish.user == current_user %>
 <div class="btn-group">

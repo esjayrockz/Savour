@@ -14,7 +14,7 @@
 <% @dishes.each do |dish| %>
 <tr >
 <td class="active"><%= dish.dish %></td>
-<td class="success"><%= dish.user.email %></td>
+<td class="success"><%= dish.user.name %></td>
 <td class="warning"><%= dish.rating %></td>
 <td class="danger"><%= link_to "View dish", dish %>
 </tr>

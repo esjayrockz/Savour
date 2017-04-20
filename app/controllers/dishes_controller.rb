@@ -46,6 +46,6 @@ class DishesController < ApplicationController
     end
 
   def dish_params
-    params.require(:dish).permit(:dish, :rating)
+    params.require(:dish).permit(:dish, :cuisine, :category)
   end
 end

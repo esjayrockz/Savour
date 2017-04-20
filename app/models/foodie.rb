@@ -1,0 +1,2 @@
+class Foodie < User
+end

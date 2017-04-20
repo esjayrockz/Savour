@@ -1,0 +1,2 @@
+class Restaurant < User
+end

@@ -8,6 +8,14 @@
     <%= f.text_field :name, autofocus: true, class: "form-control", required: true %>
     </div>
 
+    <div class="form-group">
+    <%= f.label :type, 'Are you a Restaurant or a Foodie'%><br>
+    <%= f.select :type, options_for_select([
+    "Foodie",
+    "Restaurant"]),
+    {}, { class: "form form-group form-control",required: true } %>
+    </div>
+
 	  <div class="form-group">
 	  	<%= f.label :email %>
 	  	<%= f.email_field :email, autofocus: true, class: "form-control", required: true %>

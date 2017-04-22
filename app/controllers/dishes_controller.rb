@@ -3,7 +3,8 @@ class DishesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
 
   def index
-    @dishes = Dish.all.order("rating DESC")
+  #  @dishes = Dish.all.order("rating DESC")
+    @dishes = Dish.all
   end
 
   def new

@@ -1,7 +1,6 @@
 class DishesController < ApplicationController
   before_action :find_dish, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
-  before_filter { |c| c.action_name == "rate" && c.confirm_user_type(Foodie) }
 
   def index
     @dishes = Dish.all.order("rating DESC")
@@ -12,9 +11,6 @@ class DishesController < ApplicationController
     @dish = current_user.dishes.build
   end
 
-  def rate
-    @dish = current_user.dishes.build
-  end
 
   def create
     @dish = current_user.dishes.build(dish_params)

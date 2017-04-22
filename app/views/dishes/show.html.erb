@@ -1,7 +1,9 @@
 <div class="page-header">
   <h1><%= @dish.dish %><br></h1>
 </div>
+<% if @dish.image.present? %>
 <%= image_tag @dish.image.url(:medium) %></br>
+<% end %>
 <h2><small>Restaurant: <%= @dish.user.name %></small></h2>
 <h2><small>Cuisine: <%= @dish.cuisine %></small></h2>
 <h2><small>Dish tags #<%= @dish.category %></small></h2>
@@ -10,5 +12,9 @@
 <div class="btn-group">
 <%= link_to "Edit Dish", edit_dish_path(@dish), class: "btn btn-primary" =%>&nbsp;
 <%= link_to "Delete Dish", dish_path(@dish), method: :delete, data: {confirm: "Are you sure ?"}, class: "btn btn-default" =%>
+</div>
+<% else %>
+<div class="btn-group">
+<%= link_to "Rate this dish", new_dish_review_path(@dish), class: "btn btn-primary" =%>
 </div>
 <% end %>

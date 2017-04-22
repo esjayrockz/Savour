@@ -22,7 +22,7 @@
      <li><%= link_to "Create new dish", new_dish_path%></li>
      <% end %>
      <% if current_user.type == "Foodie" %>
-     <li><%= link_to "Rate a dish", rate_path%></li>
+     <li><%= link_to "Rate a dish", new_dish_path%></li>
      <% end %>
       <li><%= link_to "Account", edit_user_registration_path%></li>
       <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete%></li>

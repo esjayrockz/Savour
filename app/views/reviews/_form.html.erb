@@ -1,23 +1,23 @@
-<%= form_for @dish do |f|%>
-<% if @dish.errors.any? %>
+<%= form_for ([@dish,@review]) do |f|%>
+<% if @review.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@dish.errors.count, "error") %> prohibited this link from being saved:</h2>
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this link from being saved:</h2>
 
     <ul>
-    <% @dish.errors.full_messages.each do |message| %>
+    <% @review.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
     </ul>
   </div>
 <% end %>
+
   <div class="form-group clearfix">
   <div class="col-xs-7 ">
-  <%= f.label :dish %><br>
-  <%= f.text_field :dish, class: "form-control ",required: true %><br>
+  <%= f.label :comment, 'Write a review' %><br>
+  <%= f.text_area :comment, class: "form-control ",required: true %><br>
   </div>
-
   <div class="col-xs-7 ">
-  <%= f.label :rating, 'Dont rate the dish'%><br>
+  <%= f.label :rating, 'Choose a rating'%><br>
   <%= f.select :rating, options_for_select([
     ["Choose a rating", ""],
     "1",

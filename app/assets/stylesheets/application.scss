@@ -18,20 +18,83 @@
   @import "bootstrap";
 
 
+
+.number{
+  border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      padding: 14px 2px 0px 2px;
+      background: #fff;
+      text-align: center;
+}
+.number1{
+  color: #CEF6CE;
+  background-color: #088A08;
+}
+
+.number2{
+      color: #088A08;
+      background-color: #CEF6CE;
+}
+.number3{
+      color: #61380B;
+      background-color: #FF8000;
+}
+.number4{
+      color: #2A0A12;
+      background-color: #DF3A01;
+}
+.number5{
+      color: #F5A9BC;
+      background-color: #8A0829;
+}
+
   .index{
-   background: url("julien-pianetti-147831.jpg") no-repeat center center fixed;
+   background: url("index.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
      opacity: 0.9;
+     font-family: 'Expletus Sans';
+    font-size: 16px;
   }
+
+  td{
+
+    font-family: 'Open Sans';
+  }
+  .extra{
+  padding-top: 8px;
+}
+
+  h5{
+  font-weight: bold;
+  margin-left: 18px;
+  }
+
+  h4{
+  padding-top: 10px;
+  font-weight: bold;
+  }
+
+
 
 .dis{
     position: absolute;
     left: 34px;
     top: 370px;
 }
+small{
+  color:#A4A4A4;
+}
 
+.reviews {
+	padding: 15px 0;
+	border-bottom: 1px solid #EAEAEA;
+	.star-rating {
+		padding-bottom: 8px;
+	}
+}
 
 .white{
 color: white;
@@ -41,6 +104,7 @@ color: white;
  	font-size: 36px;
  	font-weight: 700;
    color:#cc3300;
+   font-family: 'Amaranth';
  	//text-transform: uppercase;
  	letter-spacing: -1px;
  	padding: 15px 0;

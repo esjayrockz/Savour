@@ -1,10 +1,10 @@
 class DishesController < ApplicationController
   before_action :find_dish, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [:index, :show]
+  before_filter { |c| c.action_name == "new" && c.confirm_user_type(Restaurant) }
 
   def index
-  #  @dishes = Dish.all.order("rating DESC")
-    @dishes = Dish.all
+    @dishes = Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
   end
 
   def new
@@ -24,6 +24,13 @@ class DishesController < ApplicationController
   end
 
   def show
+    @reviews = Review.where(dish_id: @dish.id).order("created_at DESC")
+
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
   end
 
   def edit

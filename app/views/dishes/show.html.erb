@@ -1,13 +1,19 @@
-<div class="page-header">
-  <h1><%= @dish.dish %><br></h1>
-</div>
+<div class ="panel panel-default">
+  <div class ="panel-body">
+    <div class ="row">
+      <div class ="col-md-5">
+
+  <h2><%= @dish.dish %><br></h2>
+
 <% if @dish.image.present? %>
 <%= image_tag @dish.image.url(:medium) %></br>
 <% end %>
+<div class="star-rating" data-score= <%= @avg_rating %> ></div>
+<em><%="#{@reviews.length} reviews"%></em>
 <h2><small>Restaurant: <%= @dish.user.name %></small></h2>
 <h2><small>Cuisine: <%= @dish.cuisine %></small></h2>
 <h2><small>Dish tags #<%= @dish.category %></small></h2>
-
+<br>
 <% if @dish.user == current_user %>
 <div class="btn-group">
 <%= link_to "Edit Dish", edit_dish_path(@dish), class: "btn btn-primary" =%>&nbsp;
@@ -18,3 +24,41 @@
 <%= link_to "Rate this dish", new_dish_review_path(@dish), class: "btn btn-primary" =%>
 </div>
 <% end %>
+</div>
+
+<div class="col-md-4 col-md-offset-3">
+  <% if @reviews.blank? %>
+    <% if current_user.type == "Restaurant" %>
+        <h4>No reviews</h4>
+    <% elsif current_user.type == "Foodie" %>
+        <h3>Reviews</h3>
+        <br>
+        <h4>No reviews just yet, would you like to add the first ?</h4>
+        <br>
+        <%= link_to "Write a review", new_dish_review_path(@dish), class: "btn btn-danger" =%>
+    <% end %>
+  <% else %>
+  <h3>Reviews</h3>
+    <% @reviews.each do |review| %>
+    <div class="reviews comments">
+    <div class="star-rating" data-score= <%= review.rating %> ></div>
+    <p><%= review.comment %></p>
+  <small > Submitted <%= time_ago_in_words(review.created_at) %> by  <%= review.user.name %> </small>
+
+    </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+$('.star-rating').raty({
+  path: '/assets',
+  readOnly: true,
+  score: function() {
+    return $(this).attr('data-score');
+  }
+});
+</script>

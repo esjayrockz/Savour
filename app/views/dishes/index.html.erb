@@ -1,3 +1,4 @@
+
 <body class = "index">
 <table class="table  table-hover">
   <h1> #Trending dishes this week</font> </h1>
@@ -7,7 +8,6 @@
       <th><h2>Dish</h2></th>
       <th><h2>Restaurant</h2></th>
       <th><h2>Rating</h2></th>
-      <th colspan="5"></th>
     </tr>
   </thead>
 
@@ -15,14 +15,23 @@
 <% @dishes.each do |dish| %>
 <tr>
   <% if dish.image.present? %>
-<td><%= image_tag dish.image.url(:thumb) %></br><td>
+<td><p class="extra"><%= image_tag dish.image.url(:thumb) %></p><td></br>
   <% else %>
-<td colspan="2"></td>
+  <td colspan="2"></td>
 <% end %>
-<td><h4><%= dish.dish %></h4></td>
+<td class="extra"><h4><%= link_to dish.dish, dish %></h4></td>
 <td><h4><%= dish.user.name %></h4></td>
-<td><h4><%= dish.rating %></h4></td>
-<td><h4><%= link_to "View dish", dish %></h4></td>
+<% if dish.average_rating>=8  %>
+<td><h5 class="number number1"><%= dish.average_rating.round(1) %></h5></td>
+<% elsif dish.average_rating>=6 && dish.average_rating<8%>
+<td><h5 class="number number2"><%= dish.average_rating.round(1) %></h5></td>
+<% elsif dish.average_rating>=4 && dish.average_rating<6%>
+<td><h5 class="number number3"><%= dish.average_rating.round(1) %></h5></td>
+<% elsif dish.average_rating>=2 && dish.average_rating<4%>
+<td><h5 class="number number4"><%= dish.average_rating.round(1) %></h5></td>
+<% elsif dish.average_rating>=0 && dish.average_rating<2%>
+<td><h5 class="number number5"><%= dish.average_rating.round(1) %></h5></td>
+<% end %>
 </tr>
 <% end %>
 </tbody>

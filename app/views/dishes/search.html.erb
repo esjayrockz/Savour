@@ -1,14 +1,16 @@
 <% if @dishes.blank? %>
-<div>Sorry ! Your search did not return any results</div>
+<div class="find3">Sorry ! Your search did not return any results</div>
+<div style= "padding: 40px 0px 0px 80px">
+<%= link_to "Search again",rate_path, class: "btn btn-default btn-danger"  %>
+</div>
 <% else %>
-<table class="table  table-hover">
+<table class="table table-hover">
 
   <thead >
     <tr>
       <th colspan="2"></th>
       <th><h2>Dish</h2></th>
       <th><h2>Restaurant</h2></th>
-
     </tr>
   </thead>
 
@@ -22,7 +24,6 @@
 <% end %>
 <td class="extra"><h4><%= link_to dish.dish, dish %></h4></td>
 <td><h4><%= dish.user.name %></h4></td>
-
 </tr>
 <% end %>
 </tbody>

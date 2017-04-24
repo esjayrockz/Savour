@@ -1,5 +1,16 @@
 
 <body class = "index">
+  <div class = "find">
+    Find the best food in town
+  </div>
+  <%= form_tag search_dishes_path, method: :get, role: "search" do %>
+<div class = "search">
+  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes…" %>
+  <div class = "submit">
+  <%= submit_tag "Search", name: nil, class: "btn btn-default btn-danger" %>
+  </div>
+</div>
+<% end %>
 <table class="table  table-hover">
   <h1> #Trending dishes this week</font> </h1>
   <thead >

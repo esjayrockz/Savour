@@ -17,7 +17,25 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+  .find {
+  	color: #1e3046;
+  	font-family: 'Baloo';
+  	font-size: 40px;
+  	font-weight: 400;
+  	line-height: 72px;
 
+    padding: 50px 5px 0px 140px;
+  }
+
+  .find2 {
+    color: #1e3046;
+    font-family: 'Baloo';
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 72px;
+
+    padding: 50px 5px 0px 70px;
+  }
 
 .number{
   border-radius: 50%;
@@ -49,6 +67,14 @@
       background-color: #8A0829;
 }
 
+.search{
+margin: 40px 5px 75px 5px;
+}
+
+.submit{
+margin: 10px 100px 30px 350px;
+}
+
   .index{
    background: url("index.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -60,8 +86,7 @@
   }
 
   td{
-
-    font-family: 'Open Sans';
+  font-family: 'Open Sans';
   }
   .extra{
   padding-top: 8px;

@@ -1,0 +1,30 @@
+<% if @dishes.blank? %>
+<div>Sorry ! Your search did not return any results</div>
+<% else %>
+<table class="table  table-hover">
+
+  <thead >
+    <tr>
+      <th colspan="2"></th>
+      <th><h2>Dish</h2></th>
+      <th><h2>Restaurant</h2></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+<% @dishes.each do |dish| %>
+<tr>
+  <% if dish.image.present? %>
+<td><p class="extra"><%= image_tag dish.image.url(:thumb) %></p><td></br>
+  <% else %>
+  <td colspan="2"></td>
+<% end %>
+<td class="extra"><h4><%= link_to dish.dish, dish %></h4></td>
+<td><h4><%= dish.user.name %></h4></td>
+
+</tr>
+<% end %>
+</tbody>
+</table>
+<% end %>

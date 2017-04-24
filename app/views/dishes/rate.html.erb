@@ -1,0 +1,15 @@
+
+<body class = "index">
+  <div class = "find2">
+    Search for the dish you want to rate
+  </div>
+  <%= form_tag search_dishes_path, method: :get, role: "search" do %>
+<div class = "search">
+  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes…" %>
+  <div class = "submit">
+  <%= submit_tag "Search", name: nil, class: "btn btn-default btn-danger" %>
+  </div>
+</div>
+<% end %>
+
+</body>

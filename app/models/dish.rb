@@ -1,4 +1,5 @@
 class Dish < ApplicationRecord
+  searchkick
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_attached_file :image, styles: { medium: "400x600>", thumb: "60x90>" }, default_url: "/images/:style/missing.png"

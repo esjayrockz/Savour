@@ -7,6 +7,17 @@ class DishesController < ApplicationController
     @dishes = Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
   end
 
+  def rate
+  end
+
+  def search
+    if params[:search].present?
+      @dishes = Dish.search(params[:search])
+    else
+      @dishes = Dish.all
+    end
+  end
+
   def new
     #@dish = Dish.new
     @dish = current_user.dishes.build

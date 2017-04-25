@@ -14,5 +14,6 @@
 !/tmp/.keep
 /public/system/dishes/images
 
+
 # Ignore Byebug command history file.
 .byebug_history

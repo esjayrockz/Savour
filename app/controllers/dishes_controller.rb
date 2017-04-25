@@ -4,7 +4,8 @@ class DishesController < ApplicationController
   before_filter { |c| c.action_name == "new" && c.confirm_user_type(Restaurant) }
 
   def index
-    @dishes = Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
+    @dishes = Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').
+    select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
   end
 
   def rate

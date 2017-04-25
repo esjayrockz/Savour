@@ -1,4 +1,4 @@
-<div class ="panel panel-default">
+<body class="dish_show">
   <div class ="panel-body">
     <div class ="row">
       <div class ="col-md-5">
@@ -21,7 +21,7 @@
 </div>
 <% else %>
 <div class="btn-group">
-<%= link_to "Rate this dish", new_dish_review_path(@dish), class: "btn btn-primary" =%>
+<%= link_to "Rate this dish", new_dish_review_path(@dish), class: "btn btn-danger" =%>
 </div>
 <% end %>
 </div>
@@ -43,7 +43,7 @@
     <div class="reviews comments">
     <div class="star-rating" data-score= <%= review.rating %> ></div>
     <p><%= review.comment %></p>
-  <small > Submitted <%= time_ago_in_words(review.created_at) %> by  <%= review.user.name %> </small>
+  <small > Submitted <%= time_ago_in_words(review.created_at) %> ago by  <%= review.user.name %> </small>
 
     </div>
     <% end %>
@@ -51,7 +51,8 @@
 </div>
 </div>
 </div>
-</div>
+
+
 
 <script>
 $('.star-rating').raty({
@@ -62,3 +63,4 @@ $('.star-rating').raty({
   }
 });
 </script>
+</body class="dish_show">

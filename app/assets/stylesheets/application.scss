@@ -17,24 +17,32 @@
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
+  .search{
+  margin: 210px 5px 225px 5px;
+  }
+
+  .submit{
+  margin: 10px 100px 30px 350px;
+  }
+
   .find {
-  	color: #1e3046;
+  	color: #fff ;
   	font-family: 'Baloo';
   	font-size: 40px;
   	font-weight: 400;
   	line-height: 72px;
 
-    padding: 50px 5px 0px 140px;
+    padding: 10px 5px 0px 140px;
   }
 
   .find2 {
-    color: #1e3046;
+    color: #fff;
     font-family: 'Baloo';
     font-size: 40px;
     font-weight: 400;
     line-height: 72px;
 
-    padding: 50px 5px 0px 70px;
+    padding: 10px 5px 0px 70px;
   }
 
   .find3 {
@@ -54,6 +62,7 @@
       padding: 14px 2px 0px 2px;
       background: #fff;
       text-align: center;
+      font-family: 'Open Sans';
 }
 .number1{
   color: #CEF6CE;
@@ -77,29 +86,141 @@
       background-color: #8A0829;
 }
 
-.search{
-margin: 40px 5px 75px 5px;
-}
 
-.submit{
-margin: 10px 100px 30px 350px;
-}
+
+
 
   .index{
+   background: url("index1.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+     font-family: 'Expletus Sans';
+     color: #fff;
+
+    font-size: 16px;
+
+  }
+
+  .search_css{
    background: url("index.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-     opacity: 0.9;
+
      font-family: 'Expletus Sans';
+     color: black;
+    a{
+    color: black;
+    }
+    a:hover {
+    color: grey;
+    text-decoration: none;
+    }
     font-size: 16px;
-  }
+    h4{color: black;}
+    }
+
+h2 small{
+  color:black
+}
+  .new_dish_css{
+   background: url("create_dish.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+     font-family: 'Expletus Sans';
+     color: black;
+    a{
+    color: black;
+    }
+    a:hover {
+    color: grey;
+    text-decoration: none;
+    }
+    font-size: 16px;
+    h4{color: black;}
+    }
+
+    .rate_dish_css{
+     background: url("rate_dish.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+
+       font-family: 'Expletus Sans';
+       color: black;
+      a{
+      color: black;
+      }
+      a:hover {
+      color: grey;
+      text-decoration: none;
+      }
+      font-size: 16px;
+      h4{color: black;}
+      }
+
+    .account{
+     background: url("acc_1.png") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+
+       font-family: 'Expletus Sans';
+       color: black;
+      a{
+      color: black;
+      }
+      a:hover {
+      color: grey;
+      text-decoration: none;
+      }
+      font-size: 16px;
+      h4{color: black;}
+      }
+
+      .dish_show{
+       background: url("dish_page.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+
+         font-family: 'Expletus Sans';
+         color: black;
+        a{
+        color: black;
+        }
+        a:hover {
+        color: grey;
+        text-decoration: none;
+        }
+        font-size: 16px;
+        h4{color: black;}
+        }
+
+    .form_padd{
+      padding-left: 200px;
+    }
 
   td{
+
   font-family: 'Open Sans';
+  color: #fff;
+  font-size: 2em
   }
   .extra{
   padding-top: 8px;
+  color: #fff;
+}
+a {
+color: #fff;
+}
+
+a:hover {
+    color: #fff;
 }
 
   h5{
@@ -116,11 +237,8 @@ margin: 10px 100px 30px 350px;
 
 .dis{
     position: absolute;
-    left: 34px;
-    top: 370px;
-}
-small{
-  color:#A4A4A4;
+    left: 234px;
+    top: 360px;
 }
 
 .reviews {
@@ -138,13 +256,17 @@ color: white;
   #logo {
  	font-size: 36px;
  	font-weight: 700;
-   color:#cc3300;
+   a{
+     color: #000066;
+   }
    font-family: 'Amaranth';
  	//text-transform: uppercase;
  	letter-spacing: -1px;
  	padding: 15px 0;
    a:hover {
-       color: #000066;
+       color: grey;
+       text-decoration: none;
+
    }
  }
  html,body{

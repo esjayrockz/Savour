@@ -11,7 +11,7 @@
   </div>
 </div>
 <% end %>
-<table class="table  table-hover">
+<table class="table">
   <h1> #Trending dishes this week</font> </h1>
   <thead >
     <tr>
@@ -30,7 +30,7 @@
   <% else %>
   <td colspan="2"></td>
 <% end %>
-<td class="extra"><h4><%= link_to dish.dish, dish %></h4></td>
+<td class="extra"><h4 class="extra2""><%= link_to dish.dish, dish %></h4></td>
 <td><h4><%= dish.user.name %></h4></td>
 <% if dish.average_rating>=8  %>
 <td><h5 class="number number1"><%= dish.average_rating.round(1) %></h5></td>

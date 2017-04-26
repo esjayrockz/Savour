@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: Savour_production
-  username: Savour
-  password: <%= ENV['SAVOUR_DATABASE_PASSWORD'] %>
+  username: savouradmin
+  password: <%= ENV['savourpassword'] %>

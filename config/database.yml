@@ -52,3 +52,4 @@ production:
   database: Savour_production
   username: Savour
   password: <%= ENV['SAVOUR_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

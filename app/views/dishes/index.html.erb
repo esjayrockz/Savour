@@ -5,7 +5,7 @@
   </div>
   <%= form_tag search_dishes_path, method: :get, role: "search" do %>
 <div class = "search">
-  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes…" %>
+  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes or cuisines…" %>
   <div class = "submit">
   <%= submit_tag "Search", name: nil, class: "btn btn-default btn-danger" %>
   </div>
@@ -30,7 +30,7 @@
   <% else %>
   <td colspan="2"></td>
 <% end %>
-<td class="extra"><h4 class="extra2""><%= link_to dish.dish, dish %></h4></td>
+<td class="extra"><h4 class="extra2"><%= link_to dish.dish, dish %></h4></td>
 <td><h4><%= dish.user.name %></h4></td>
 <% if dish.average_rating>=8  %>
 <td><h5 class="number number1"><%= dish.average_rating.round(1) %></h5></td>

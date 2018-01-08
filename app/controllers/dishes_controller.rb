@@ -1,14 +1,33 @@
 class DishesController < ApplicationController
   before_action :find_dish, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter { |c| c.action_name == "new" && c.confirm_user_type(Restaurant) }
+  before_filter :authenticate_user!, except: [:index, :show, :search, :caro]
+  before_filter { |c| c.action_name == "new" && c.confirm_user_type(Restaurant)}
+  before_filter { |c| c.action_name == "restaurant_profile" && c.confirm_user_type(Restaurant) }
+  before_filter { |c| c.action_name == "user_profile" && c.confirm_user_type(Foodie) }
+  before_filter { |c| c.action_name == "rate" && c.confirm_user_type(Foodie) }
+  before_filter { |c| c.action_name == "admin" && c.confirm_user_type(Admin) }
 
   def index
     @dishes = Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').
-    select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
+    select("dishes.image_file_name,dishes.id,dishes.dish,dishes.user_id, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").group("dishes.id").order("average_rating DESC, number_of_reviews DESC").limit(10)
   end
 
   def rate
+  end
+
+  def admin
+  @users = User.all
+  end
+
+  def user_profile
+    @reviews = Review.where(user_id: current_user.id).order("created_at DESC")
+  end
+
+  def restaurant_profile
+  @dishes =  Dish.joins('LEFT JOIN reviews ON dishes.id = reviews.dish_id').
+    select("dishes.image_file_name,dishes.id,dishes.dish,dishes.cuisine, avg(ifnull(reviews.rating,0)) as average_rating, count(reviews.id) as number_of_reviews").where(user_id: current_user.id).group("dishes.id").order("average_rating DESC, number_of_reviews DESC")
+
+
   end
 
   def search

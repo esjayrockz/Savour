@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <link href='https://fonts.googleapis.com/css?family=Expletus+Sans:400' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Amaranth:400' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Baloo:400' rel='stylesheet' type='text/css'>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,900' rel='stylesheet' type='text/css'>
 <html>
@@ -13,22 +14,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.‌​2/css/bootstrap.min.‌​css rel="stylesheet">
+  <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.‌​2/css/bootstrap.min.‌​css rel="stylesheet"">
   </head>
 
-  <body>
-<div class="parallax">
+
     <header class="navbar navbar-default" role="navigation">
     <div class="navbar-inner">
     <div class="container">
     <div id="logo" class="navbar-brand"><%= link_to "Savour", root_path %> </div>
-    <nav class="collapse navbar-collapse navbar-ex1-collapse">
+    <nav class="collapse navbar-collapse navbar-ex1-collapse nav-font">
     <% if user_signed_in? %>
     <ul class="nav navbar-nav navbar-right">
      <% if current_user.type == "Restaurant" %>
+     <li><%= link_to "#{current_user.name}", restaurant_profile_path%></li>
      <li><%= link_to "Create new dish", new_dish_path%></li>
      <% end %>
      <% if current_user.type == "Foodie" %>
+     <li><%= link_to "#{current_user.name}", user_profile_path%></li>
+     <li><%= link_to "Rate a dish", rate_path%></li>
+     <% end %>
+     <% if current_user.type == "Admin" %>
+     <li><%= link_to "Admin functions", admin_path%></li>
+     <li><%= link_to "Create new dish", new_dish_path%></li>
      <li><%= link_to "Rate a dish", rate_path%></li>
      <% end %>
       <li><%= link_to "Account", edit_user_registration_path%></li>
@@ -46,7 +53,7 @@
 </div>
 </header>
 
-
+<body>
  <div id="main_content" class="container">
  <% flash.each do |name, msg| %>
    <%= content_tag(:div, msg, class: "alert alert-info") %>

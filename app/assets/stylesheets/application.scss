@@ -63,28 +63,28 @@
       background: #fff;
       text-align: center;
       font-family: 'Open Sans';
-}
-.number1{
-  color: #CEF6CE;
-  background-color: #088A08;
-}
+    }
+  .number1{
+    color: #CEF6CE;
+    background-color: #088A08;
+  }
 
-.number2{
-      color: #088A08;
-      background-color: #CEF6CE;
-}
-.number3{
-      color: #61380B;
-      background-color: #FF8000;
-}
-.number4{
-      color: #2A0A12;
-      background-color: #DF3A01;
-}
-.number5{
-      color: #F5A9BC;
-      background-color: #8A0829;
-}
+  .number2{
+        color: #088A08;
+        background-color: #CEF6CE;
+  }
+  .number3{
+        color: #61380B;
+        background-color: #FF8000;
+  }
+  .number4{
+        color: #2A0A12;
+        background-color: #DF3A01;
+  }
+  .number5{
+        color: #F5A9BC;
+        background-color: #8A0829;
+  }
 
 
 
@@ -100,8 +100,73 @@
      color: #fff;
 
     font-size: 16px;
+    a {
+    color: #fff;
+    }
+
+    a:hover {
+        color: #fff;
+    }
 
   }
+
+  .restaurant_profile{
+   background: url("restaurant.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+     font-family: 'Expletus Sans';
+     color: #fff;
+
+    font-size: 16px;
+    a {
+    color: #fff;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+  }
+
+  .sign_in_css{
+  	background: url("img2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    font-family: 'Fjalla One';
+    a {
+    color: #fff;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+  }
+
+  .nav-font{
+    font-size: 16px;
+    font-family: 'Fjalla One';
+  }
+
+  .sign_up_css{
+  	background: url("img5.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    font-family: 'Fjalla One';
+    a {
+    color: #fff;
+    }
+
+    a:hover {
+        color: #fff;
+    }
+
+  }
+
 
   .search_css{
    background: url("index.jpg") no-repeat center center fixed;
@@ -215,13 +280,7 @@ h2 small{
   padding-top: 8px;
   color: #fff;
 }
-a {
-color: #fff;
-}
 
-a:hover {
-    color: #fff;
-}
 
   h5{
   font-weight: bold;

@@ -5,7 +5,7 @@
   </div>
   <%= form_tag search_dishes_path, method: :get, role: "search" do %>
 <div class = "search">
-  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes…" %>
+  <%= text_field_tag :search, params[:search], class: "form-control",placeholder: "Search for your favourite dishes or cuisines…" %>
   <div class = "submit">
   <%= submit_tag "Search", name: nil, class: "btn btn-default btn-danger" %>
   </div>

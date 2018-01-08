@@ -1,0 +1,15 @@
+<body class = "restaurant_profile">
+<h3>All Users</h3>
+  <% @users.each do |user| %>
+
+  <p><%= user.name %>
+    <%= user.type %>
+<small > Created <%= time_ago_in_words(user.created_at) %> ago</small>
+<% if user.type == "Restaurant" %>
+  <%= link_to "Delete restaurant account",user_path(user), method: :delete, data: { confirm: "You sure?" }   %>
+<% else %>
+  <%= link_to "Delete user account", user_path(user), method: :delete, data: { confirm: "You sure?" }  %>
+<% end %>
+</p>
+<% end %>
+</body>
